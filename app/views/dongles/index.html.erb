@@ -1,0 +1,29 @@
+<h1>Listing dongles</h1>
+
+<table>
+  <tr>
+    <th>Widget</th>
+    <th>Size</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @dongles.each do |dongle| %>
+  <tr>
+    <td><%= link_to dongle.widget.name, dongle.widget %></td>
+    <td><%= dongle.size %></td>
+    <td><%= dongle.name %></td>
+    <td><%= dongle.description %></td>
+    <td><%= link_to 'Show', dongle %></td>
+    <td><%= link_to 'Edit', edit_dongle_path(dongle) %></td>
+    <td><%= link_to 'Destroy', dongle, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Dongle', new_dongle_path %>

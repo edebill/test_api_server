@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @widget.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @widget.description %>
+</p>
+
+<b>Dongles:</b>
+<table>
+    <tr><th>name</th>
+        <th>size</th>
+        <th>description</th>
+    </tr>
+<% @widget.dongles.each do |dongle| %>
+    <tr><td><%= link_to dongle.name, dongle %></td>
+        <td><%= dongle.size %></td>
+        <td><%= dongle.description %></td>
+    </tr>
+<% end %>
+</table>
+
+<%= link_to 'Edit', edit_widget_path(@widget) %> |
+<%= link_to 'Back', widgets_path %>

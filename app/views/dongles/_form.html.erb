@@ -1,0 +1,33 @@
+<%= form_for(@dongle) do |f| %>
+  <% if @dongle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dongle.errors.count, "error") %> prohibited this dongle from being saved:</h2>
+
+      <ul>
+      <% @dongle.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :widget_id %><br />
+    <%= f.select(:widget_id, @widgets.collect { |w| [w.name, w.id]}) %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br />
+    <%= f.number_field :size %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

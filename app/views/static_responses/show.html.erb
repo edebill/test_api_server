@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @static_response.name %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @static_response.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_static_response_path(@static_response) %> |
+<%= link_to 'Back', static_responses_path %>

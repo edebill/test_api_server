@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Widget:</b>
+  <%= link_to @dongle.widget.name, @dongle.widget %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @dongle.size %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @dongle.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @dongle.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_dongle_path(@dongle) %> |
+<%= link_to 'Back', dongles_path %>
